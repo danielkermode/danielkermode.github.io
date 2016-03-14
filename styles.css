@@ -1,0 +1,15 @@
+/***************************
+Here's the css.
+file couldn't be found in folder blog,
+so I did the css inline for those blogs.
+I prefer inline css anyway.
+***************************/
+
+p {
+  font-size: 1.2em;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
