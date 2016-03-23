@@ -1,15 +1,117 @@
-/***************************
-Here's the css.
-file couldn't be found in folder blog,
-so I did the css inline for those blogs.
-I prefer inline css anyway.
-***************************/
+@font-face {
+  font-family: 'HalloSans';
+  src: url(resources/HalloSans.otf) format(opentype);
+  font-weight: bold;
+}
 
 p {
   font-size: 1.2em;
 }
 
-h1 {
+h1.home {
   color: maroon;
-  margin-left: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+h1.blog {
+  color: maroon;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.heading {
+  background: url('resources/soft-brushing.jpg');
+  margin: 0px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.blog-title {
+  order: 1;
+}
+
+div.blog-date {
+  color: #333;
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: right;
+  padding-top: 30px;
+  order: 2;
+}
+
+body {
+  background: url('resources/checker_grey.jpg');
+  background-repeat: repeat;
+}
+
+hr.title {
+  border-top: 10px solid #333;
+  outline-color: black;
+  margin: 0px;
+}
+
+div.main-text {
+  text-align: center;
+  color: black;
+  margin: 0px;
+  background-color: #DBD8D8;
+}
+
+div.blog-text {
+  color: black;
+  margin: 0px;
+  background-color: #DBD8D8;
+}
+
+.dom {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding-right: 75px;
+  padding-left: 75px;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  border-radius: 300px;
+}
+
+.dom:hover {
+  background: url('resources/dom-graphic.png');
+  height: 340px;
+  width: 640px;
+  display: block;
+  margin: 0 auto;
+  color: transparent;
+  cursor: pointer;
+}
+
+.my-nav {
+  margin: 0px;
+  font-weight: 600;
+}
+
+.my-li {
+  background-color: #D0CFCF;
+}
+
+.my-caption {
+  text-align: center;
+}
+
+img.maccers {
+  width:340px;
+  height: auto;
+}
+
+div.box-model-container {
+  display: flex;
+}
+
+div.box-model-text {
+  padding-right: 20px;
+}
+
+div.box-model-image {
+  padding-top: 30px;
 }

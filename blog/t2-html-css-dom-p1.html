@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>html css dom p1</title>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='../styles.css' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+  <div class='container'>
+  <!--nav-->
+    <div class="navbar navbar-inverse my-nav" role="navigation">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="http://danielkermode.github.io">Home</a></li>
+          <li><a href="http://danielkermode.github.io/blog/c1-reflection-blog">c1 reflection blog</a></li>
+          <li><a href="http://danielkermode.github.io/blog/c1-time-and-habits-blog.html">c1 time and habits blog</a></li>
+          <li class="active"><a href="http://danielkermode.github.io/blog/t2-html-css-dom-p1.html">html css dom p1 blog</a></li>
+        </ul>
+      </div>
+    </div>
+  <!--nav-->
+    <div class='well heading'>
+      <div class='blog-title'>
+        <h1 class='blog'>HTML CSS DOM part 1 </h1>
+      </div>
+      <div class='blog-date'> Wednesday, 2016-03-22 </div>
+    </div>
+    <hr class='title'/>
+    <div class='well blog-text'>
+      <p>
+        <b>Wishlist</b>
+      </p>
+      <ul class="list-group">
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-triangle-right"></span>
+        Hover animation for navigation links
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-triangle-right"></span>
+        Better font/banner for header
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-triangle-right"></span>
+        Some animation somewhere, possibly background
+        </li>
+      </ul>
+      <hr/>
+      <p>
+        <b>Analogy for HTML, CSS and the DOM</b>
+      </p>
+      <p>
+      The analogy used in the Udacity tutorial was a house for the HTML, and decorations for CSS. CSS is 'style' for your HTML (it's in the name: Cascading Style Sheets!) whereas HTML determines the actual structure of your page, and most importantly the view layout. As for the DOM, according to <a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction'>the Mozilla Developer Network</a>, it's an interface for HTML and XML documents. This just means it's a way to represent the data contained in a document (and for the web, that means web pages). The DOM can be accessed by programming languages, and most commonly Javascript is used for this. Without the DOM, Javascript code couldn't manipulate a web page in the way it does. Another thing that MDN notes is that browsers implement functionality of the DOM (eg. Chrome) but the DOM might differ between different browsers. That's not something to lose sleep over though! The main point is that the structure of a web page consists of a DOM, and you can use this DOM through code to build good-looking web pages.
+      </p>
+      <figure class="figure">
+        <button class='btn btn-primary dom'>
+        This button is part of the DOM.
+        </button>
+        <figcaption class="figure-caption my-caption">Mouse over for a picture. Note this uses only CSS, not Javascript!</figcaption>
+      </figure>
+      <hr/>
+      <p>
+        <b>Boxifying Design</b>
+      </p>
+      <p>
+      Because HTML is represented in terms of boxes, when you think about laying out designs for web pages, it's best to think in terms of boxes. Even elements of your page that aren't square can be thought of as boxes by enclosing the object in a box. Then you can fit these in with your other boxed elements as a kind of jigsaw puzzle.
+      </p>
+      <hr/>
+      <p>
+        <b>Box Model</b>
+      </p>
+      <div class='box-model-container'>
+        <div class='box-model-text'>
+          <p>
+          From <a href='http://www.w3schools.com/css/css_boxmodel.asp'>w3schools</a>, the CSS box model is a box that wraps every HTML element. It consists of margins, borders, padding, and the actual content. You can adjust these properties with CSS and your boxed element will adjust accordingly. For example:
+          <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="background-color: white; border: none; margin: 0; line-height: 125%"><span style="color: #007700">h1</span><span style="color: #BB0066; font-weight: bold">.blog</span> {
+            <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span> <span style="color: #800000">maroon</span>;
+            <span style="color: #008800; font-weight: bold">padding-left</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">10px</span>;
+            <span style="color: #008800; font-weight: bold">font-weight</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">600</span>;
+            }
+            </pre>
+          </div>
+          <p>
+          This is taken from the CSS used on this page, and will give the element some left padding. To the right is a diagram of the model.
+          </p>
+        </div>
+        <div class='box-model-image'>
+          <img src='../resources/css-box-model.png' alt='box-model'/>
+        </div>
+      </div>
+      <hr/>
+      <br/>
+    </div>
+  </div>
+  </body>
+</html>
