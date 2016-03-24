@@ -42,7 +42,7 @@ div.blog-date {
 }
 
 body {
-  background: url('resources/checker_grey.jpg');
+  background: url('resources/checker-grey.jpg');
   background-repeat: repeat;
 }
 
@@ -102,6 +102,11 @@ div.blog-text {
 img.maccers {
   width:340px;
   height: auto;
+}
+
+img.centered {
+  display: block;
+  margin: 0 auto;
 }
 
 div.box-model-container {
