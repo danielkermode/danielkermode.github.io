@@ -5,10 +5,16 @@
 }
 
 @media only screen and (min-width: 500px) {
-  body { font-size: 1.75em; }
+  body {
+    font-size: 1.75em !important;
+  }
   .code-example {
     font-size: 1em !important;
   }
+}
+
+body {
+  font-size: 0.9em;
 }
 
 .code-example {
