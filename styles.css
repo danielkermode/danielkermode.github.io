@@ -6,7 +6,7 @@
 
 @media only screen and (min-width: 500px) {
   body {
-    font-size: 1.75em !important;
+    font-size: 1.6em !important;
   }
   .code-example {
     font-size: 1em !important;
@@ -14,7 +14,7 @@
 }
 
 body {
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 .code-example {
@@ -25,12 +25,14 @@ h1.home {
   color: maroon;
   padding-left: 10px;
   font-weight: 600;
+  font-size: 1.5em;
 }
 
 h1.blog {
   color: maroon;
   padding-left: 10px;
   font-weight: 600;
+  font-size: 1.5em;
 }
 
 .heading {
