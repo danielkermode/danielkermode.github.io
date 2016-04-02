@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T3 Design to Web Blog</title>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='../styles.css' rel='stylesheet' type='text/css' />
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  <div class='container'>
+  <!--nav-->
+    <div class="navbar navbar-inverse my-nav" role="navigation">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <li class="active"><a class="navbar-brand" href="http://danielkermode.github.io">Dan K</a></li>
+      </div>
+      <div class="nav-collapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technical<span class="caret"></span></a>
+            <ul class="dropdown-menu inverse-dropdown">
+              <li><a href="http://danielkermode.github.io/blog/t2-html-css-dom-p1.html">html css dom p1 blog</a></li>
+              <li><a href="http://danielkermode.github.io/blog/t2-html-css-dom-p2.html">html css dom p2 blog</a></li>
+              <li class="active"><a href="http://danielkermode.github.io/blog/t3-design-to-web-blog.html">t3 design to web blog</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cultural<span class="caret"></span></a>
+            <ul class="dropdown-menu inverse-dropdown">
+              <li><a href="http://danielkermode.github.io/blog/c1-time-and-habits-blog.html">c1 time and habits blog</a></li>
+              <li><a href="http://danielkermode.github.io/blog/c1-reflection-blog">c1 reflection blog</a></li>
+              <li><a href="http://danielkermode.github.io/blog/c2-emotional-intelligence.html">c2 emotional intelligence blog</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!--nav-->
+    <div class='well heading'>
+      <div class='blog-title'>
+        <h1 class='blog'>Design to Web</h1>
+      </div>
+      <div class='blog-date'> Saturday, 2016-04-02 </div>
+    </div>
+    <hr class='title'/>
+    <div class='well blog-text'>
+      <h4>What is a responsive site?</h4>
+      <p>
+        A responsive site is one that changes depending on the device/screen size used. Responsive is important because as I explained in <a href="http://danielkermode.github.io/blog/t2-html-css-dom-p2.html">the previous blog</a>, some users of a website will probably be using a phone or something similar, and it's important that they don't get deterred by a site that clearly hasn't been made to suit their smaller-screen needs. I adjusted the nav bar of this site to be more responsive so that if you're on mobile or another small device, you should see that button with three lines that's on a bunch of mobile sites (if you're on a larger screen, you can resize the window to see it). It will let you view the links in a more controlled fashion.
+      </p>
+      <hr/>
+      <h4>Why mobile first?</h4>
+      <p>
+        Mobile-first queries are how <a href="http://getskeleton.com/">Skeleton's</a> grid is built (Skeleton is a lightweight CSS framework) and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS.
+      </p>
+      <hr/>
+      <h4>Frameworks</h4>
+      <p>
+        "Framework" is a broad term, but generally a framework in software is understood to mean an abstraction tool that makes it easier to develop applications. For web development, web frameworks are used.
+      </p>
+      <p>
+        <a href="http://1stwebdesigner.com/web-frameworks/">This article</a> is just one of many explaining the pros and cons of web frameworks. It was the first that came up in a google search, so it's probably valid. Here's a summary of the good points this individual makes:
+      </p>
+      <ul class="list-group">
+        <h4 class="list-group-item-heading">Pros</h4>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Efficiency. Pre-built functionality.
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Security. A popular framework will prioritise security (hopefully).
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Cost. Most are free.
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Support. Widely used normally means lots of documentation and people who can help.
+        </li>
+      </ul>
+      <ul class="list-group">
+        <h4 class="list-group-item-heading">Cons</h4>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+        You learn the framework, not the language. There is the danger that you'll rely on it, and not understand the fundamentals of what you are doing.
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+        Limitation. You'll have to follow the framework's core behaviour.
+        </li>
+        <li class="list-group-item my-li">
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+        Public. Ironically security is both a strength and a weakness, since public code also means nothing is hidden from anyone.
+        </li>
+      </ul>
+      <hr/>
+      <h4>Wireframes</h4>
+      <p>
+        Wireframes are used in design to help scaffold out the basic layout and structure of a page. They are a visual guide for a developer, but can be created by anyone, eg. a visual designer. They help to show roughly what the user experience of the website will be.
+      </p>
+      <p>
+        Below are my wireframes for this website. The navbar was a little tricky to implement as a completely responsive component with all the styling I wanted, but Bootstrap proved to be a huge help.
+      </p>
+      <figure class="figure">
+        <img class='centered' src='../images/wireframe-blog-page-desktop.jpg' alt='wireframe'/>
+        <figcaption class="figure-caption my-caption">Blog desktop wireframe.</figcaption>
+      </figure>
+      <hr/>
+      <figure class="figure">
+        <img class='centered' src='../images/wireframe-blog-page-mobile.jpg' alt='wireframe'/>
+        <figcaption class="figure-caption my-caption">Blog mobile wireframe.</figcaption>
+      </figure>
+      <hr/>
+      <figure class="figure">
+        <img class='centered' src='../images/wireframe-index-page-desktop.jpg' alt='wireframe'/>
+        <figcaption class="figure-caption my-caption">Index desktop wireframe.</figcaption>
+      </figure>
+      <hr/>
+      <figure class="figure">
+        <img class='centered' src='../images/wireframe-index-page-mobile.jpg' alt='wireframe'/>
+        <figcaption class="figure-caption my-caption">Index blog wireframe.</figcaption>
+      </figure>
+    </div>
+  </div>
+  </body>
+</html>
