@@ -4,8 +4,8 @@
   font-weight: bold;
 }
 
-p {
-  font-size: 1.2em;
+@media only screen and (min-width: 500px) {
+  body { font-size: 2em; }
 }
 
 h1.home {
@@ -39,6 +39,10 @@ div.blog-date {
   text-align: right;
   padding-top: 30px;
   order: 2;
+}
+
+div.code-example {
+
 }
 
 body {
