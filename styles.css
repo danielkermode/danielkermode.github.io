@@ -131,18 +131,15 @@ blockquote>:last-child {
 
 pre,
 code {
+  background-color: #111111;
+  color: #fff;
   font-size: 15px;
-  border-radius: 3px;
 }
 
 code {
   padding: 1px 5px;
   word-wrap: break-word;
   border: solid 1px #333;
-}
-
-pre {
-  padding: 8px 12px;
 }
 
 @media screen and (max-width: 600px) {

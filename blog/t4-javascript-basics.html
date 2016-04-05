@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T4 Javascript Basics</title>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="t4 javascript basics">
+    <meta name="author" content="Dan">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='../styles.css' rel='stylesheet' type='text/css' />
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--google analytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75881291-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!--google analytics end-->
+  </head>
+  <body>
+  <div>
+  <!--nav-->
+    <header class="site-header">
+      <div class="wrapper">
+        <div class="navbar navbar-inverse my-nav" role="navigation">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand my-a" href="http://danielkermode.github.io">Home</a>
+          </div>
+          <div class="nav-collapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle my-a" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technical<span class="caret"></span></a>
+                <ul class="dropdown-menu inverse-dropdown">
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/t2-html-css-dom-p1.html">html css dom p1 blog</a></li>
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/t2-html-css-dom-p2.html">html css dom p2 blog</a></li>
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/t3-design-to-web-blog.html">t3 design to web blog</a></li>
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/t4-javascript-basics.html">t4 javascript basics blog</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle my-a" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cultural<span class="caret"></span></a>
+                <ul class="dropdown-menu inverse-dropdown">
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/c1-time-and-habits-blog.html">c1 time and habits blog</a></li>
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/c1-reflection-blog">c1 reflection blog</a></li>
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/c2-emotional-intelligence.html">c2 emotional intelligence blog</a></li>
+                  <li><a class="my-a" href="http://danielkermode.github.io/blog/c3-meditation-process.html">c3 meditation process blog</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--nav-->
+    <div class="page-content">
+    <div class="wrapper">
+    <div class="post">
+    <header class="post-header">
+      <h1 class='post-title'>Javascript Basics</h1>
+      <span class="post-meta">Wednesday, 2016-04-06</span>
+    </header>
+    <article class="post-content">
+      <h4><b>Javascript vs HTML and CSS</b></h4>
+      <p>
+        Javascript, HTML and CSS must all be understood in the context of the internet browser. The first internet browser as far as I can tell was <a href="http://www.blooberry.com/indexdot/history/mosaic.htm">Mosaic</a>, and shortly after this came Netscape and Internet Explorer (the browser everyone now loves to hate). Javascript was <a href="https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript">created in 10 days by Brendan Eich</a>, who was working at Netscape at the time. The original name was Mocha, which then became LiveScript. A trademark license from Sun meant the language was eventually called "Javascript" (after Sun's programming language Java) which proved to be a great marketing move.
+      </p>
+      <p>
+        So why do we need these three different languages to develop webpages in a browser? To confuse people? Maybe. Each serve a very different purpose, but together they give the advantage of making rich, interactive web pages relatively easy to develop.
+        <br/>
+        <i>HTML</i> by itself creates the structure of a page (normally a page in a web browser), and the code itself consists of predefined "tags" such as <code>&lt;div&gt;</code> or <code>&lt;header&gt;</code>.
+        <br/>
+        <i>CSS</i> defines the style of a page with predefined properties of particular HTML elements. The key thing to note is that both HTML and CSS are very limited in terms of how they can interact with a webpage. This doesn't mean they aren't useful, as they provide a very high-level abstraction to lay out a document. However, if you would like to design, for example, a simple interactive computer game in a browser (that isn't just a text adventure) you are going to find HTML and CSS lacking.
+      </p>
+      <p>
+        This is where <i>Javascript</i> comes in handy. Javascript is a fully-fledged programming language (some may disagree) that uses lower-level programming concepts such as <i>functions</i> and <i>arrays</i> as well as interaction with the <abbr title="Document Object Model">DOM</abbr> to provide a more granular level of control to the developer. Initially Javascript didn't have access to the DOM and was mainly used for interacting with forms, giving feedback to the user, and detecting when they do certain things. Functions such as <code>alert()</code>, <code>confirm()</code> and <code>prompt()</code> could (and still can) be used to make windows pop up in the browser that do simple tasks.
+      </p>
+      <script>
+      function annoy() {
+          alert("Hi there, this is Javascript in action.");
+      }
+      </script>
+      <div style='text-align: center;'>
+        <button class="btn btn-primary" onclick="annoy()">Annoy me!</button>
+      </div>
+      <br/>
+      <p>
+        With browser implementation of the DOM, Javascript could use an object representation of the document to adjust it instead of just making windows pop up. In simple terms, you can say that the DOM explains the types, the values, and the hierarchy of everything in the document — there are many resources on the web explaining the DOM and Javascript's bindings to it in depth. <a href="https://www.w3.org/DOM/">Here's one.</a>
+      </p>
+      <h4><b>Control Flow and Loops</b></h4>
+      <p>
+        Javascript, like many other programming languages, uses some keywords that describe general actions for the computer to complete, and general logic for completing these actions. Taking the "if" keyword as an example: <code>if</code> I am fat, I go to the gym. It mirrors English, although computer code has to be far more exact (How fat? What is "fat" exactly? Who am "I"?). Statements like these form the "control flow" of a Javascript program.
+      </p>
+      <p>
+        Loops are part of the control flow, and have keywords that describe repetitive actions. Taking the "while" keyword as an example: <code>while</code> I am thin, I eat cakes. Again precision is important for a computer (How thin? What type of cake?). Loops are extremely useful since you don't need to repeat identical lines of code. In this example, you wouldn't have to explicitly tell the computer "Eat a cake. Eat a cake. Eat a cake. Done, I'm no longer thin."
+      </p>
+      <h4><b>Arrays and Objects</b></h4>
+      <p>
+        Objects store forms of data (numbers, objects, functions etc.) in Javascript as properties. Example syntax:
+        <pre>
+          <code>
+          <span style='color:#e66170; font-weight:bold; '>var</span> obj <span style='color:#d2cd86; '>=</span> <span style='color:#b060b0; '>{</span>
+            property<span style='color:#b060b0; '>:</span> <span style='color:#008c00; '>1</span><span style='color:#d2cd86; '>,</span>
+            property1<span style='color:#b060b0; '>:</span> <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>string</span><span style='color:#02d045; '>"</span><span style='color:#d2cd86; '>,</span>
+            property2<span style='color:#b060b0; '>:</span> <span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span><span style='color:#d2cd86; '>,</span>
+            property3<span style='color:#b060b0; '>:</span> <span style='color:#e66170; font-weight:bold; '>function</span> func<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+              <span style='color:#9999a9; '>//do something</span>
+            <span style='color:#b060b0; '>}</span>
+          <span style='color:#b060b0; '>}</span><span style='color:#b060b0; '>;</span>
+          </code>
+        </pre>
+        These properties can be accessed two ways.
+        <br/>
+        Dot notation: <code>obj<span style='color:#d2cd86; '>.</span>property</code>
+        <br/>
+        Bracket notation: <code>obj<span style='color:#d2cd86; '>[</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>property</span><span style='color:#02d045; '>"</span><span style='color:#d2cd86; '>]</span></code>
+      </p>
+      <p>
+        Arrays in Javascript are actually just objects but they have special "index" properties which are all numbers, and they have other functionality such as <code>length</code> (which basically gives the last valid index + 1 of the array). Literals use square brackets instead of curly ones, and you don't need to specify property names (since they will be numbers). Example syntax:
+        <pre>
+          <code>
+          <span style='color:#e66170; font-weight:bold; '>var</span> arr = <span style='color:#d2cd86; '>[</span>1, <span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>string</span><span style='color:#02d045; '>"</span>, {}, function func(){}<span style='color:#d2cd86; '>]</span>
+          </code>
+        </pre>
+        Now you can access these properties with bracket notation and the desired index (starting from 0).
+        <br/>
+        This gets the second value ("string"): <code>arr<span style='color:#d2cd86; '>[</span>1<span style='color:#d2cd86; '>]</span></code>
+      </p>
+      <p>
+        Of course, these are just the basics of arrays and objects. For more details <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN</a> has excellent documentation.
+      </p>
+      <h4><b>Functions</b></h4>
+      <p>
+        Functions in Javascript are actually still objects. They are "function" objects with special properties and methods. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">From MDN docs:</a>
+        <blockquote>
+          Generally speaking, a function is a "subprogram" that can be called by code external (or internal in the case of recursion) to the function.
+        </blockquote>
+      </p>
+      <p>
+        Conceptually, functions are just a way to bracket sets of commands for the computer. Perhaps <code>makeBed()</code> could be a function. Then everytime you "call" this function, it will make your bed (this could be tricky to actually program). Or maybe you design a function <code>cookMeal()</code>. Then if you tell the computer "<code>cookMeal()</code>!" it will hopefully cook a meal for you.
+      </p>
+      <p>
+        They are a useful concept because if you craft a well-thought-out function, you can call it many times to make your life easy. Taking the <code>cookMeal()</code> function above, you can simply ask the computer to run your function every evening when it's time for dinner. You can also pass in "arguments" to a function which will adjust what it does. For example, the meal function may take an argument "food". If the user prefers pasta, they can run <code>cookMeal("pasta")</code> and buon appetito! You can even pass in functions as arguments to another function (functionception).
+      </p>
+    </article>
+    </div>
+    </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="wrapper">
+      <a href="https://github.com/danielkermode">
+        <span class="icon  icon--github">
+          <svg viewBox="0 0 16 16">
+            <path fill="#FFFFFF" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+          </svg>
+        </span>
+      </a>
+      <div class="copyright">&commat;Daniel Kermode</div>
+    </div>
+  </footer>
+  </body>
+</html>
