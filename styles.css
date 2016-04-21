@@ -18,6 +18,58 @@ figure {
   padding: 0;
 }
 
+/**
+ * Blackboard theme (for rainbow.js)
+ *
+ * Adapted from Domenico Carbotta's TextMate theme of the same name
+ *
+ * @author Domenico Carbotta
+ * @author Craig Campbell
+ * @version 1.0.2
+ */
+pre, code {
+    background: #111111;
+    word-wrap: break-word;
+    margin: 0px;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+pre, code .comment {
+    color: #727272;
+}
+
+pre, code .constant {
+    color: #D8FA3C;
+}
+
+pre, code .storage {
+    color: #FBDE2D;
+}
+
+pre, code .string, pre, code .comment.docstring {
+    color: #61CE3C;
+}
+
+pre, code .string.regexp, pre, code .support.tag.script, pre, code .support.tag.style {
+    color: #fff;
+}
+
+pre, code .keyword, pre, code .selector {
+    color: #FBDE2D;
+}
+
+pre, code .entity {
+    color: #FF6400;
+}
+
+pre, code .variable.global, pre, code .variable.class, pre, code .variable.instance {
+    color: #FF6400;
+}
+/*end theme (for rainbow.js)*/
+
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -45,7 +97,6 @@ h5,
 h6,
 p,
 blockquote,
-pre,
 ul,
 ol,
 dl,
@@ -129,14 +180,9 @@ blockquote>:last-child {
   margin-bottom: 0;
 }
 
-pre,
 code {
-  background-color: #111111;
   color: #fff;
-  font-size: 15px;
-}
-
-code {
+  background-color: #111111;
   padding: 1px 5px;
   word-wrap: break-word;
   border: solid 1px #333;
@@ -149,6 +195,7 @@ code {
 }
 
 pre>code {
+  color: #fff;
   border: 0;
   padding-right: 0;
   padding-left: 0;

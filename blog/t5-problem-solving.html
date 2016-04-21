@@ -12,6 +12,10 @@
     <link href='../styles.css' rel='stylesheet' type='text/css' />
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--js code highlighting-->
+    <script src="../resources/jslibs/rainbow.min.js"></script>
+    <script src="../resources/jslibs/generic.js"></script>
+    <script src="../resources/jslibs/javascript.js"></script>
     <!--google analytics-->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -50,7 +54,8 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t2-html-css-dom-p2.html">DOM part 2</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t3-design-to-web-blog.html">Design to Web</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t4-javascript-basics.html">Javascript Basics</a></li>
-                <li><a class="my-a" href="http://danielkermode.github.io/blog/t5-problem-solving.html">Problem Solving</a></li>
+                <li><a class="my-a" href="http://danielkermode.github.io/blog/t5-problem-solving.html">Tech Blog 5</a></li>
+                <li><a class="my-a" href="http://danielkermode.github.io/blog/t6-js-language.html">JS language</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -98,10 +103,10 @@
       Management of state proved to be an issue in the <a href="https://dansracecar.herokuapp.com/">racecar app</a> I made this week. I thought state would be simple since it was such a small program, but it was tricky to handle different states in conjunction with messages from the server (a socket.io server) in such a way that the app worked with many different "paths" (for example the user exiting a game then challenging another player). This is related to the second point, in that I initially had issues understanding exactly how to use <a href="http://socket.io/">socket.io</a> and wasn't aware of the best way to use the API. I still certainly don't claim expertise with socket.io, but it got easier as I kept researching and googling better ways to do things.
       </p>
       <p>
-      By far the most frustrating and time-consuming problem with the racecar app was not knowing to call <code>document.removeEventListener</code> after the game had finished. It meant the React UI component I was rendering for the game didn't unmount from the DOM properly, and caused annoying state issues. In hindsight, I think I could attach the event listener to the component rather than the global document, but my current implementation is working fine. It's funny how small oversights like these can often consume disproportionate amounts of time while coding.
+      By far the most frustrating and time-consuming problem with the racecar app was not knowing to call <code data-language="javascript">document.removeEventListener</code> after the game had finished. It meant the React UI component I was rendering for the game didn't unmount from the DOM properly, and caused annoying state issues. In hindsight, I think I could attach the event listener to the component rather than the global document, but my current implementation is working fine. It's funny how small oversights like these can often consume disproportionate amounts of time while coding.
       </p>
       <p>
-      I haven't found cross browser issues to be too bad, but they can be a bit of a pain. My first implementation of the racecar app checked the "code" property of a "keydown" event, which apparently doesn't exist in Safari and IE. So I did some googling and discovered that a better way to get the letter of the key pressed (in all browsers) is to use <code>String.fromCharCode</code>.
+      I haven't found cross browser issues to be too bad, but they can be a bit of a pain. My first implementation of the racecar app checked the "code" property of a "keydown" event, which apparently doesn't exist in Safari and IE. So I did some googling and discovered that a better way to get the letter of the key pressed (in all browsers) is to use <code data-language="javascript">String.fromCharCode</code>.
       </p>
       <p>
       Deployment for the racecar app was (thankfully) very easy with <a href="https://www.heroku.com/">Heroku</a>. Since it was a simple standalone node.js app, I just followed the (good) documentation on Heroku's website for Node and my app can be deployed with <code>git push heroku master</code>. However with databases and other dependencies, I've found that deployment can sometimes be a headache.
@@ -111,15 +116,15 @@
       Array methods can remove verbose for loops and make your code more expressive.
       </p>
       <p>
-      <code>.map()</code> is one of the most useful. Basically what it does is call a function on each element in an array, and return a new array with each element adjusted by the function. It doesn't mutate the existing array. So for example, if you had a function "dyeRed(carpet)" and you had an array with a bunch of blue carpets, you could run <code>blueCarpets.map(dyeRed);</code> and you will receive an array of red carpets (however, the blueCarpets array will be the same).
+      <code>.map()</code> is one of the most useful. Basically what it does is call a function on each element in an array, and return a new array with each element adjusted by the function. It doesn't mutate the existing array. So for example, if you had a function "dyeRed(carpet)" and you had an array with a bunch of blue carpets, you could run <code data-language="javascript">blueCarpets.map(dyeRed);</code> and you will receive an array of red carpets (however, the blueCarpets array will be the same).
       </p>
       <p>
-      <code>.filter()</code> also applies a function to each element in an array, but will return the element if the function gives a "true" and will remove the element if the function gives a "false". Again, it doesn't mutate the existing array. So say you have an array of people and you had a function "isGeek(person)", you could run <code>people.filter(isGeek);</code> and you'd get the geeks returned back to you, but your original "people" array would look the same.
+      <code>.filter()</code> also applies a function to each element in an array, but will return the element if the function gives a "true" and will remove the element if the function gives a "false". Again, it doesn't mutate the existing array. So say you have an array of people and you had a function "isGeek(person)", you could run <code data-language="javascript">people.filter(isGeek);</code> and you'd get the geeks returned back to you, but your original "people" array would look the same.
       </p>
       <p>
       <code>.reduce()</code> is a bit more complicated. It still applies a function to every array element, but the function's first argument will be the "previous" value of the value accumulated so far, and the second argument will be the current element. As well as taking in this function, it takes in an optional starting value. Then it will go through each of the elements, successively applying the function, and return a single value (again without modifying the array). The most simple example of how it works is with an "add(a, b)" function that adds two numbers.
       <br/>
-      Calling <code>[1, 2, 3].reduce(add, 10);</code> will successively add each value of the array to the starting value of 10. So you'll get 10 + 1 + 2 + 3 = 16. The function doesn't have to add, it could do any operation successively on each element of the array. A more abstract example: say you have an array of colours, and a function "mixColour(a, b)". Calling <code>colours.reduce(mixColour);</code> would give you a successive mix of all the colours. So you'd probably get brown, or maybe white if it was light (I'm not really a colour expert).
+      Calling <code data-language="javascript">[1, 2, 3].reduce(add, 10);</code> will successively add each value of the array to the starting value of 10. So you'll get 10 + 1 + 2 + 3 = 16. The function doesn't have to add, it could do any operation successively on each element of the array. A more abstract example: say you have an array of colours, and a function "mixColour(a, b)". Calling <code data-language="javascript">colours.reduce(mixColour);</code> would give you a successive mix of all the colours. So you'd probably get brown, or maybe white if it was light (I'm not really a colour expert).
       </p>
     </article>
     </div>

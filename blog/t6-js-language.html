@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>html css dom p2</title>
+    <title>JS language</title>
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="t2 code p2">
+    <meta name="description" content="JS lang">
     <meta name="author" content="Dan">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="icon"
@@ -12,6 +12,10 @@
     <link href='../styles.css' rel='stylesheet' type='text/css' />
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--js code highlighting-->
+    <script src="../resources/jslibs/rainbow.min.js"></script>
+    <script src="../resources/jslibs/generic.js"></script>
+    <script src="../resources/jslibs/javascript.js"></script>
     <!--google analytics-->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -63,7 +67,7 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c3-meditation-process.html">Meditation</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c4-daily-mindfulness.html">Daily Mindfulness</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c5-self-confidence.html">Self Confidence</a></li>
-                
+
               </ul>
             </li>
           </ul>
@@ -76,52 +80,90 @@
     <div class="wrapper">
     <div class="post">
     <header class="post-header">
-      <h1 class='post-title'>HTML CSS DOM part 2</h1>
-      <span class="post-meta">Thursday, 2016-03-24</span>
+      <h1 class='post-title'>JS language</h1>
+      <span class="post-meta">Thursday, 2016-04-21</span>
     </header>
     <article class="post-content">
       <p>
-        <b>Grid-Based Design</b>
+      Javascript derives its syntax from <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> which in turn derives some of its syntax from <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>.
       </p>
+      <h4><b>Parentheses</b></h4>
       <p>
-      Grids are a structure used in any sort of graphic design. They provide a framework to the designer that allows easy, logical organisation of graphical elements that need to be shown. <a href="http://getbootstrap.com/">Bootstrap </a> is an example of a framework that uses a grid system to allow webpage elements to be organised in such a way. In Bootstrap, there are 12 different column classes that can be used for HTML elements, each dividing the page into a section. 12 is a great number for a web page grid, because it means the page can be divided into thirds, quarters or halves and the columns are wide enough that the user can see what's going on in each of them.
-      </p>
-      <p>
-      This page uses Bootstrap through a CDN (content delivery network) to access Bootstrap classes within HTML elements.
-      </p>
-      <figure class="figure">
-        <img class='centered' src='../resources/bootstrapgrid.png' alt='bootstrapgrid'/>
-        <figcaption class="figure-caption my-caption">Examples from the <a href="http://getbootstrap.com/">Bootstrap</a> grid system.</figcaption>
-      </figure>
-      <p>
-        <b>Responsive Web Design</b>
-      </p>
-      <p>
-      From the trustworthy <a href="https://en.wikipedia.org/wiki/Responsive_web_design">Wikipedia</a>, Responsive Web Design&trade; (not actually trademarked) is an approach to web design aimed at crafting sites to provide an optimal viewing and interaction experience. This is "hypey" because currently a large number of people are viewing the web through not only computers, but also devices such as iPhone&trade;s and iPad&trade;s (actually trademarked). A site designed with RWD is fluid and can be resized proportionally across different size screens without ruining the overall structure of the page. This makes life far easier for the developer, who can easily make sites that look great across a range of devices, and also for the viewer, who is delighted to see such a great looking webpage even on his or her iPhone&trade;.
-      </p>
-      <p>
-      In technical terms, this is done through a number of methods. For example:
-      </p>
+      Parentheses <code>()</code> are used in a number of cases:
       <ul class="list-group">
         <li class="list-group-item my-li">
-        <span class="glyphicon glyphicon-ok"></span>
-        By using percentage units instead of absolute pixels
+        <b>1. </b> Invoking functions/methods, eg. <code data-language="javascript">console.log('hi');</code>.
         </li>
         <li class="list-group-item my-li">
-        <span class="glyphicon glyphicon-ok"></span>
-        By using media queries in CSS which allow custom style rules based on the characteristics of the device
+        <b>2. </b> Adjusting the order of evaluation for certain Javascript expressions, eg.
+        </br>
+        <code data-language="javascript">var num = (valIsTrue? 2 : 3) * 3;</code>. They can work in a similar fashion to parentheses in mathematics, and will prioritise whatever is in the parentheses for evaluation. So in the example, if the variable "valIsTrue" is true, then "num" will evaluate to (2) * 3 = 6, whereas without parentheses the code will just evaluate to 2.
+        </li>
+        <li class="list-group-item my-li">
+        <b>3. </b> After certain keywords that define control flow (such as "if", "for", "while", "switch"), eg.
+        <br/>
+        <code data-language="javascript">if(blah > 11) console.log('blah');</code>. The code in the parentheses in this case is an expression that determines whether the code after the "if" statement should be executed.
+        </li>
+        <li class="list-group-item my-li">
+        <b>4. </b> Creating an instance of an object with "new", eg. <code data-language="javascript">new Number(3);</code>. "Number" is a function that will return a special number object if called with the preceding keyword "new". Used this way, it's called a "constructor".
+        </li>
+        <li class="list-group-item my-li">
+        <b>5. </b> An anonymous function (one not assigned to any variable) can be created by wrapping a function expression with parentheses, eg.
+        <br/>
+        <code data-language="javascript">(function(){return 'val'});</code>. You can then instantly invoke the function by adding parentheses after the last curly bracket:
+        <br/>
+        <code data-language="javascript">(function(){return 'val'}());</code> or after the expression:
+        <br/>
+        <code data-language="javascript">(function(){return 'val'})();</code>. Both do the same thing. These are useful for scoping variables within the function ("scope" is the environment in which the variable can be accessed).
         </li>
       </ul>
-      <p>
-      Responsive web design is becoming more important as the amount of mobile traffic now accounts for more than half of total internet traffic.
       </p>
-      <figure class="figure">
-        <img class='centered' src='../resources/delighted-viewers.jpg' alt='delighted'/>
-        <figcaption class="figure-caption my-caption">
-        These people are delighted at the responsive design of the page they are looking at.
-        <a href="http://ifixgreeley.com/about-us/">Source</a>
-        </figcaption>
-      </figure>
+      <h4><b>Brackets</b></h4>
+      <p>
+      Square brackets <code>[]</code> are mainly used when dealing with arrays. Array literals are created with square brackets, eg.
+      <br/>
+      <code data-language="javascript">
+      var arr = [['hi'], 1, 2, 3, 'let\'s go'];
+      </code>
+      <br/>
+      Bracket notation can be used to access an element of this array with a number, eg. <code data-language="javascript">arr[arr.length-1]</code> gets the last index "let's go". Bracket notation can also be used for any objects, eg. <code data-language="javascript">anObject['aProperty']</code> which must be accessed with a string as the property value.
+      </p>
+      <h4><b>Braces</b></h4>
+      <p>
+      Braces <code>{}</code>, informally known as curly brackets, are similar to parentheses but have slightly different use cases:
+      <ul class="list-group">
+        <li class="list-group-item my-li">
+        <b>1. </b> Function bodies, eg. <code data-language="javascript">function foodBar(){return 'val';};</code> where the return statement is the body here.
+        </li>
+        <li class="list-group-item my-li">
+        <b>2. </b> Loop/conditional bodies, eg. <code data-language="javascript">if(true) {console.log('true');}</code> where the "console.log" is the body of the "if" statement in this case. If the body is just one statement, the curly brackets can be left out. However multi-statement bodies need the curly brackets.
+        </li>
+        <li class="list-group-item my-li">
+        <b>3. </b> Object literals, eg.
+        <br/>
+        <code data-language="javascript">var obj = {};</code>.
+        </li>
+        <li class="list-group-item my-li">
+        <b>4. </b> You can also place them haphazardly in your code, eg.
+        <br/>
+        <pre>
+        <code data-language="javascript">
+        var ugly = 'code';
+        {
+          console.log(ugly);
+        }
+        </code>
+        </pre>
+        This will work, but is pointless in most current Javascript interpreters. Newer versions of Javascript engines may support block-scoping variables, making this useful.
+        </li>
+      </ul>
+      </p>
+      <h4><b>Single and Double Quotes</b></h4>
+      <p>
+      Single quotes <code data-language="javascript">var s = 'string';</code> and double quotes <code data-language="javascript">var s = "string";</code> are both used for string literals. They can also be used for object property names, eg. <code data-language="javascript">var obj = {'a-property-with-dashes': 1};</code>. Both do the same thing, and usage comes down to stylistic preference. The important thing is to remain consistent, and also to keep in mind that you will have to escape the quote character you use within strings. The JS escape character is the backslash. For example, if you'd like to create a string containing a quote using double quotes:
+      <br/>
+      <code data-language="javascript">var s = "this is \"quoteception\"!";</code>
+      </p>
     </article>
     </div>
     </div>
