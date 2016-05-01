@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Problem Solving</title>
+    <title>Motivation</title>
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="problem solving">
+    <meta name="description" content="motivation">
     <meta name="author" content="Dan">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="icon"
@@ -12,10 +12,6 @@
     <link href='../styles.css' rel='stylesheet' type='text/css' />
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!--js code highlighting-->
-    <script src="../resources/jslibs/rainbow.min.js"></script>
-    <script src="../resources/jslibs/generic.js"></script>
-    <script src="../resources/jslibs/javascript.js"></script>
     <!--google analytics-->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -56,7 +52,7 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t4-javascript-basics.html">Javascript Basics</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t5-problem-solving.html">Tech Blog 5</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t6-js-language.html">JS language</a></li>
-                
+
               </ul>
             </li>
             <li class="dropdown">
@@ -82,52 +78,35 @@
     <div class="wrapper">
     <div class="post">
     <header class="post-header">
-      <h1 class='post-title'>Problem Solving</h1>
-      <span class="post-meta">Friday, 2016-04-15</span>
+      <h1 class='post-title'>Motivation</h1>
+      <span class="post-meta">2016-04-29</span>
     </header>
     <article class="post-content">
-      <h4><b>Getting Blocked</b></h4>
+      <h4><b>Pleasure, Passion and Higher Purpose</b></h4>
       <p>
-      Goodness, there have been many times that I have been blocked on a piece of code. Generally I try to <i>stay calm</i> and go through the problem step-by-step and try to work out the control flow of the program, and <code data-language="javascript">console.log</code> everything I can along the way (I think this is the most popular method of debugging for Javascript developers). Here are three general things that seem to block me on a regular basis:
+      Mengy contrasts three types of happiness, taken from the insights of Tony Hsieh, a successful entrepreneur. Pleasure is "rock-star" happiness, and can't be maintained for long unless you are actually a rock-star of some kind (not many people are, unfortunately). Passion is "flow" where you are "in the zone". Higher purpose is the interesting one. It's about being part of something bigger than yourself. According to CM, pleasure and passion are not sustainable, and it is higher purpose that you should look to for long term happiness.
+      </p>
+      <p>
+      Some of my core values:
       <ul class="list-group">
         <li class="list-group-item my-li">
-        <b>1. </b> Management of state (in JS apps <a href="https://github.com/reactjs/redux">Redux</a> can handle this quite nicely).
+        <b>Honesty</b> extending to self-honesty. I strive to be honest, even brutally so. This is tricky because human nature means we tend to oversell ourselves as much as possible, but when I reflect I like to have a clear understanding of exactly where I stand.
         </li>
         <li class="list-group-item my-li">
-        <b>2. </b> Understanding exactly how a library/framework functions.
+        <b>Curiosity.</b> Questioning leads to greater understanding, and I try to leave nothing unanswered even if it is not the "standard" train of thought. Considering alternatives in greater depth can reveal more about the core problem.
         </li>
         <li class="list-group-item my-li">
-        <b>3. </b> Building something that is cross-browser and easy to deploy.
+        <b>Freedom.</b> This is again a tricky one because the definition of freedom can change depending on the weather. Many people have different ideas about what constitutes freedom, but generally I understand it to mean a right to responsibility for your own actions, as long as these don't impede on others directly. This is still certainly a grey area, but it's applicable to many things such as having financial freedom, freedom of thought, speech and other mediums of communication (however not necessarily other actions)!
         </li>
       </ul>
       </p>
       <p>
-      Management of state proved to be an issue in the <a href="https://dansracecar.herokuapp.com/">racecar app</a> I made this week. I thought state would be simple since it was such a small program, but it was tricky to handle different states in conjunction with messages from the server (a socket.io server) in such a way that the app worked with many different "paths" (for example the user exiting a game then challenging another player). This is related to the second point, in that I initially had issues understanding exactly how to use <a href="http://socket.io/">socket.io</a> and wasn't aware of the best way to use the API. I still certainly don't claim expertise with socket.io, but it got easier as I kept researching and googling better ways to do things.
+      The meditation exercise was not really "my jam". However the resilience ideas were interesting. Chade-mo continued to demonstrate his proficiency in eloquent metaphors with the analogy of happiness as a deep ocean, with a choppy surface at times but a calm bottom (this quote was actually attributed to Matthieu Ricard). I like to imagine the calm depths without all the nasty sea creatures lurking and killing each other.
       </p>
-      <p>
-      By far the most frustrating and time-consuming problem with the racecar app was not knowing to call <code data-language="javascript">document.removeEventListener</code> after the game had finished. It meant the React UI component I was rendering for the game didn't unmount from the DOM properly, and caused annoying state issues. In hindsight, I think I could attach the event listener to the component rather than the global document, but my current implementation is working fine. It's funny how small oversights like these can often consume disproportionate amounts of time while coding.
-      </p>
-      <p>
-      I haven't found cross browser issues to be too bad, but they can be a bit of a pain. My first implementation of the racecar app checked the "code" property of a "keydown" event, which apparently doesn't exist in Safari and IE. So I did some googling and discovered that a better way to get the letter of the key pressed (in all browsers) is to use <code data-language="javascript">String.fromCharCode</code>.
-      </p>
-      <p>
-      Deployment for the racecar app was (thankfully) very easy with <a href="https://www.heroku.com/">Heroku</a>. Since it was a simple standalone node.js app, I just followed the (good) documentation on Heroku's website for Node and my app can be deployed with <code>git push heroku master</code>. However with databases and other dependencies, I've found that deployment can sometimes be a headache.
-      </p>
-      <h4><b>Some JS Array Methods</b></h4>
-      <p>
-      Array methods can remove verbose for loops and make your code more expressive.
-      </p>
-      <p>
-      <code>.map()</code> is one of the most useful. Basically what it does is call a function on each element in an array, and return a new array with each element adjusted by the function. It doesn't mutate the existing array. So for example, if you had a function "dyeRed(carpet)" and you had an array with a bunch of blue carpets, you could run <code data-language="javascript">blueCarpets.map(dyeRed);</code> and you will receive an array of red carpets (however, the blueCarpets array will be the same).
-      </p>
-      <p>
-      <code>.filter()</code> also applies a function to each element in an array, but will return the element if the function gives a "true" and will remove the element if the function gives a "false". Again, it doesn't mutate the existing array. So say you have an array of people and you had a function "isGeek(person)", you could run <code data-language="javascript">people.filter(isGeek);</code> and you'd get the geeks returned back to you, but your original "people" array would look the same.
-      </p>
-      <p>
-      <code>.reduce()</code> is a bit more complicated. It still applies a function to every array element, but the function's first argument will be the "previous" value of the value accumulated so far, and the second argument will be the current element. As well as taking in this function, it takes in an optional starting value. Then it will go through each of the elements, successively applying the function, and return a single value (again without modifying the array). The most simple example of how it works is with an "add(a, b)" function that adds two numbers.
-      <br/>
-      Calling <code data-language="javascript">[1, 2, 3].reduce(add, 10);</code> will successively add each value of the array to the starting value of 10. So you'll get 10 + 1 + 2 + 3 = 16. The function doesn't have to add, it could do any operation successively on each element of the array. A more abstract example: say you have an array of colours, and a function "mixColour(a, b)". Calling <code data-language="javascript">colours.reduce(mixColour);</code> would give you a successive mix of all the colours. So you'd probably get brown, or maybe white if it was light (I'm not really a colour expert).
-      </p>
+      <figure class="figure">
+        <img class='centered' src='../resources/seadevil.jpg' alt='monkeyselfie'/>
+        <figcaption class="figure-caption my-caption">This is the <a href="https://en.wikipedia.org/wiki/Fanfin">Fanfin Seadevil</a>. Hopefully your idea of happiness doesn't include this frightening creature! However it is an interesting animal. The males are one-tenth the size of a female and spend most of their lives parasitically attached to one. This situation wouldn't be very pleasant in our human world. <a href="http://www.viralmeteor.com/weird-creatures-that-really-exist/">Source</a></figcaption>
+      </figure>
     </article>
     </div>
     </div>
