@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Self Confidence</title>
+    <title>Scope</title>
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Self Confidence">
+    <meta name="description" content="Scope">
     <meta name="author" content="Dan">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="icon"
@@ -23,6 +23,10 @@
       ga('send', 'pageview');
 
     </script>
+    <!--js code highlighting-->
+    <script src="../resources/jslibs/rainbow.min.js"></script>
+    <script src="../resources/jslibs/generic.js"></script>
+    <script src="../resources/jslibs/javascript.js"></script>
     <!--google analytics end-->
   </head>
   <body>
@@ -66,7 +70,7 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c5-self-confidence.html">Self Confidence</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c6-control.html">Control</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c7-motivation.html">Motivation</a></li>
-                
+
               </ul>
             </li>
           </ul>
@@ -79,28 +83,88 @@
     <div class="wrapper">
     <div class="post">
     <header class="post-header">
-      <h1 class='post-title'>Self Confidence</h1>
-      <span class="post-meta">Thursday, 2016-04-14</span>
+      <h1 class='post-title'>Scope</h1>
+      <span class="post-meta">2016-05-06</span>
     </header>
     <article class="post-content">
-      <h4><b>Mindfulness and Self-Awareness</b></h4>
+      <h4><b>What is scope?</b></h4>
       <p>
-      According to Chade-Meng, mindfulness and self-awareness are the same thing. In fact, he states this realisation as the reason he started the emotional intelligence curriculum in the first place. He gives the analogy of the mind as a fluttering flag.
-      <blockquote>
-        The flag represents the mind. In the presence of strong emotions, the mind may be turbulent like a flag fluttering violently in the wind.
-        <footer>Chade-Meng</a></footer>
-      </blockquote>
-      He then compares mindfulness to the flagpole, that keeps the mind steady and grounded.
+      Scope is the "environment" in which a variable lives. A variable can only be accessed and modified within it's own environment. Scope is a general programming principle, but it's important to fully understand the quirks of scoping specific to Javascript. This will help identify otherwise mysterious bugs. In Javascript, the scope of a variable is determined by the function in which it is defined. A variable defined outside of any function will have global scope.
       </p>
+      <pre>
+      <code data-language="javascript">
+      //this variable has global scope
+      var globalScope = 1;
+      //this will print out 1
+      console.log(globalScope);
+      //if this code is being run through a JS engine in a browser, all globally scoped variables are
+      //attached to the "window" object.
+      window.globalScope = 2;
+      //this will print out 2
+      console.log(globalScope);
+      function func() {
+        /*
+        We are now in the scope/environment of "func"!
+        You'd expect the following to print out 2 as well, and with good reason. However in JS, declarations
+        are moved to the top of the enclosing function (this also applies to global scope declarations),
+        and will have a value of "undefined" until assigned otherwise. This is called "hoisting".
+        The variable here is being declared later in the function as a local variable, which overrides
+        the global declaration.
+        So this will print out "undefined" when the function is called.
+        */
+        console.log(globalScope);
+        //Another interesting quirk is that in non-strict mode, variables assigned without a declaration
+        //will not throw a reference error but rather move the declaration to the global scope!
+        //This only applies to functions declared at a global scope.
+        anotherGlobal = 'hi';
+        var globalScope = 3;
+        var localScope = 4;
+        //prints 3 when the function is called as the variable has now been assigned
+        console.log(globalScope);
+        //prints 4
+        console.log(localScope);
+        //Although globalScope is a local variable in this function, the outer globalScope can be accessed through
+        //the window object (again only if this code being run in the browser).
+        //this will print 2
+        console.log(window.globalScope);
+        window.globalScope = 5;
+        //this will print 5 as it's after the reassignment
+        console.log(window.globalScope);
+      }
+      func();
+      //this will now print "hi"
+      console.log(anotherGlobal);
+      //this will now print 5
+      console.log(globalScope);
+      //this will throw a reference error because "localScope" has only been defined in "func",
+      //and doesn't exist globally.
+      console.log(localScope);
+      </code>
+      </pre>
       <p>
-      I tried the "body scan" technique that he gave, where you sit for 4 minutes and pay attention to different parts of your body. It was alright.
+      Each scope inherits it's parents' scopes, the technical term for this being "scopeception" (note: no one actually calls it this). So any function within "func" has access to the global scope, func's variables and it's own variables, and any function within that function has access to all that and <i>it's</i> own variables, and so on. This leads to another important concept when talking about scope, called a closure.
       </p>
-      <h4><b>My Emotions are Not Me</b></h4>
+      <br/>
+      <h4><b>Closures</b></h4>
       <p>
-      The discussion about feelings was insightful. The comparison between "existential" and "physiological" feelings is a philosophical one. Chade-meng suggests to treat emotions as if they are physiological, and to react to them appropriately. As I said in another one of the cultural blogs, control over one's emotions as crucial in a job involving computers or programming. The computer doesn't experience anything like our own sense of emotion, so to get on its level it can be useful to enter that "zen" state where emotions are practically meaningless.
-      </p>
-      <p>
-      But I wouldn't want to be an emotionless robot all the time, and I don't think Chade-Meng is arguing that this should be the case. Rather he advocates being aware of your emotions and the physiological state they can cause, and depending on the circumstance you may want to embrace or temper them. He mentions the idea from meditative tradition of "mastery over our emotions" and he uses the metaphor of thoughts as clouds, and core being as the sky. Sometimes you might get a raincloud, but the sky is constant.
+      In Javascript, each function has a special <code>[[scope]]</code> property. A reference to a function will remember its surrounding scope each time it is called. This is illustrated by the following code:
+      <pre>
+      <code data-language="javascript">
+      //Here is a function that returns another function.
+      function funcCeption() {
+        var something = 'Something';
+        function anotherFunction() {
+          return something;
+        }
+        return anotherFunction;
+      }
+      //Storing the return value of functionCeption creates a closure
+      var closure = functionCeption();
+      //this will print 'Something'. A reference to "something" has been kept in this new function.
+      console.log(closure());
+      </code>
+      </pre>
+      There's far more to closures - this is just a simple overview. But they are an important concept to be aware of when dealing with Javascript. <a href="http://www.jibbering.com/faq/notes/closures/">Here's</a> an explanation that goes into greater detail.
       </p>
     </article>
     </div>
