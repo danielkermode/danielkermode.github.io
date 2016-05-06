@@ -144,6 +144,18 @@
       <p>
       Each scope inherits it's parents' scopes, the technical term for this being "scopeception" (note: no one actually calls it this). So any function within "func" has access to the global scope, func's variables and it's own variables, and any function within that function has access to all that and <i>it's</i> own variables, and so on. This leads to another important concept when talking about scope, called a closure.
       </p>
+      <p>
+      Another thing to note is that function declarations are hoisted as well, before variable declarations.
+      </p>
+      <pre>
+      <code data-language="javascript">
+      //Calls the function and prints the string correctly as the function declaration was hoisted.
+      console.log(func());
+      function func() {
+        return 'barFood';
+      }
+      </code>
+      </pre>
       <br/>
       <h4><b>Closures</b></h4>
       <p>
