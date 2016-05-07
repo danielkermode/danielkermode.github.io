@@ -116,7 +116,6 @@
         console.log(globalScope);
         //Another interesting quirk is that in non-strict mode, variables assigned without a declaration
         //will not throw a reference error but rather move the declaration to the global scope!
-        //This only applies to functions declared at a global scope.
         anotherGlobal = 'hi';
         var globalScope = 3;
         var localScope = 4;
@@ -171,7 +170,7 @@
         }
         return anotherFunction;
       }
-      //Storing the return value of functionCeption creates a closure
+      //Storing the return value of funcCeption creates a closure
       var closure = funcCeption();
       //this will print 'Something'. A reference to "something" has been kept in this new function.
       console.log(closure());
