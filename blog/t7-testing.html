@@ -57,7 +57,7 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t5-problem-solving.html">Tech Blog 5</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t6-js-language.html">JS language</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t7-testing.html">Scope</a></li>
-                
+
               </ul>
             </li>
             <li class="dropdown">
@@ -143,9 +143,6 @@
       </code>
       </pre>
       <p>
-      Each scope inherits it's parents' scopes, the technical term for this being "scopeception" (note: no one actually calls it this). So any function within "func" has access to the global scope, func's variables and it's own variables, and any function within that function has access to all that and <i>it's</i> own variables, and so on. This leads to another important concept when talking about scope, called a closure.
-      </p>
-      <p>
       Another thing to note is that function declarations are hoisted as well, before variable declarations.
       </p>
       <pre>
@@ -157,6 +154,9 @@
       }
       </code>
       </pre>
+      <p>
+      Each scope inherits it's parents' scopes, the technical term for this being "scopeception" (note: no one actually calls it this). So any function within "func" has access to the global scope, func's variables and it's own variables, and any function within that function has access to all that and <i>it's</i> own variables, and so on. This leads to another important concept when talking about scope, called a closure.
+      </p>
       <br/>
       <h4><b>Closures</b></h4>
       <p>
