@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>html css dom p2</title>
+    <title>Javascript Refreshener</title>
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="t2 code p2">
+    <meta name="description" content="JS Refreshener">
     <meta name="author" content="Dan">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="icon"
@@ -53,7 +53,7 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t5-problem-solving.html">Tech Blog 5</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t6-js-language.html">JS language</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t7-testing.html">Scope</a></li>
-                
+
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/t7-javascript-refreshener.html">Javascript Refreshener</a></li>
               </ul>
             </li>
@@ -69,7 +69,7 @@
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c6-control.html">Control</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c7-motivation.html">Motivation</a></li>
                 <li><a class="my-a" href="http://danielkermode.github.io/blog/c8-connecting.html">Connecting</a></li>
-                
+
               </ul>
             </li>
           </ul>
@@ -82,52 +82,46 @@
     <div class="wrapper">
     <div class="post">
     <header class="post-header">
-      <h1 class='post-title'>HTML CSS DOM part 2</h1>
-      <span class="post-meta">Thursday, 2016-03-24</span>
+      <h1 class='post-title'>Javascript Refreshener</h1>
+      <span class="post-meta">2016-05-12</span>
     </header>
     <article class="post-content">
+      <h4><b>Data Types</b></h4>
       <p>
-        <b>Grid-Based Design</b>
-      </p>
-      <p>
-      Grids are a structure used in any sort of graphic design. They provide a framework to the designer that allows easy, logical organisation of graphical elements that need to be shown. <a href="http://getbootstrap.com/">Bootstrap </a> is an example of a framework that uses a grid system to allow webpage elements to be organised in such a way. In Bootstrap, there are 12 different column classes that can be used for HTML elements, each dividing the page into a section. 12 is a great number for a web page grid, because it means the page can be divided into thirds, quarters or halves and the columns are wide enough that the user can see what's going on in each of them.
-      </p>
-      <p>
-      This page uses Bootstrap through a CDN (content delivery network) to access Bootstrap classes within HTML elements.
-      </p>
-      <figure class="figure">
-        <img class='centered' src='../resources/bootstrapgrid.png' alt='bootstrapgrid'/>
-        <figcaption class="figure-caption my-caption">Examples from the <a href="http://getbootstrap.com/">Bootstrap</a> grid system.</figcaption>
-      </figure>
-      <p>
-        <b>Responsive Web Design</b>
-      </p>
-      <p>
-      From the trustworthy <a href="https://en.wikipedia.org/wiki/Responsive_web_design">Wikipedia</a>, Responsive Web Design&trade; (not actually trademarked) is an approach to web design aimed at crafting sites to provide an optimal viewing and interaction experience. This is "hypey" because currently a large number of people are viewing the web through not only computers, but also devices such as iPhone&trade;s and iPad&trade;s (actually trademarked). A site designed with RWD is fluid and can be resized proportionally across different size screens without ruining the overall structure of the page. This makes life far easier for the developer, who can easily make sites that look great across a range of devices, and also for the viewer, who is delighted to see such a great looking webpage even on his or her iPhone&trade;.
-      </p>
-      <p>
-      In technical terms, this is done through a number of methods. For example:
-      </p>
+      Javascript has seven distinct data types, six of which are primitives and one is a new ES6 feature (not available in all browsers). They are:
       <ul class="list-group">
         <li class="list-group-item my-li">
-        <span class="glyphicon glyphicon-ok"></span>
-        By using percentage units instead of absolute pixels
+        <b>Boolean </b>a logical entity, either true or false.
         </li>
         <li class="list-group-item my-li">
-        <span class="glyphicon glyphicon-ok"></span>
-        By using media queries in CSS which allow custom style rules based on the characteristics of the device
+        <b>Null </b>nothing. Not to be confused with a number <code>0</code> or an empty string <code>''</code>. It is a "falsey" value.
+        </li>
+        <li class="list-group-item my-li">
+        <b>Undefined </b>a value that has not yet been assigned. Also "falsey".
+        </li>
+        <li class="list-group-item my-li">
+        <b>Number </b>in Javascript, numbers are always <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double precision 64-bit.</a> There is no integer type (unlike many other languages). Number type can also have the values <code>+Infinity</code>, <code>-Infinity</code> and <code>NaN</code>. The last one is a bit mind-boggling considering NaN stands for "Not a Number", but <a href="https://www.youtube.com/watch?v=W69SSLfRJho">life goes on.</a>
+        </li>
+        <li class="list-group-item my-li">
+        <b>String </b> In Javascript, strings are immutable, and can only be "changed" by creating a new string with an operation such as <code>+</code>. Each string is a set of elements which are 16-bit unsigned integer values. Strings are used to represent textual data. Make sure you only use them for textual data, and not for data that could be better represented with something like an Object or a Number.
+        </li>
+        <li class="list-group-item my-li">
+        <b>Symbol </b> Symbols are a new ES6 feature and are unique and immutable. They can be used as Object keys.
+        </li>
+        <li class="list-group-item my-li">
+        <b>Object </b> These are best understood in Javascript as a collection of properties. Properties are identified as a key value (either a String or a Symbol). They can store any primitive value, including other objects. Functions are regular objects with the additional capability of being callable. Other more complex structures such as Arrays are also built on top of the base Object type.
         </li>
       </ul>
-      <p>
-      Responsive web design is becoming more important as the amount of mobile traffic now accounts for more than half of total internet traffic.
+      Note: I borrowed all this from the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Data_structures">MDN docs</a>.
       </p>
-      <figure class="figure">
-        <img class='centered' src='../resources/delighted-viewers.jpg' alt='delighted'/>
-        <figcaption class="figure-caption my-caption">
-        These people are delighted at the responsive design of the page they are looking at.
-        <a href="http://ifixgreeley.com/about-us/">Source</a>
-        </figcaption>
-      </figure>
+      <h4><b>Specifically Arrays</b></h4>
+      <p>
+      As mentioned above, Arrays are a type of object built on top of the normal Object type. Create them literally with square brackets, eg. <code>[1, 2, 3]</code>. I've gone over some array methods and how to index an array in previous blogs, but for full details check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">the MDN docs for Array.</a> Arrays have a lot of built-in methods that are useful. For example <code>.reverse()</code> will do what you'd expect and put the elements in the array back-to-front.
+      </p>
+      <h4><b>Reflection</b></h4>
+      <p>
+      This week I dove into objects and object prototypes. I didn't fully understand prototypes previously, but now I feel far more comfortable with them. Also using <code>Object.defineProperty</code> was something new. Some of the recursion was a little tricky. I'm comfortable with basic recursion but when the call stack starts looking more complicated I have some trouble understanding exactly what's going on.
+      </p>
     </article>
     </div>
     </div>
